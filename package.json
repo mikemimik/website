@@ -1,7 +1,6 @@
 {
-    "name": "editorial",
-    "description": "This is Editorial, a news-oriented theme for Ghost.",
-    "demo": "https://editorial.ghost.io",
+    "name": "website",
+    "description": "A fork of the Editorial Ghost theme.",
     "version": "2.0.0",
     "engines": {
         "ghost": ">=3.0.0",
@@ -18,7 +17,9 @@
         "test": "gscan .",
         "test:ci": "gscan --fatal --verbose .",
         "preship": "yarn test",
-        "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; fi"
+        "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; fi",
+        "token": "node scripts/api-token.js",
+        "deploy": "node scripts/deploy-theme.js"
     },
     "author": {
         "name": "Ghost Foundation",
@@ -39,25 +40,34 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/TryGhost/Editorial.git"
+        "url": "https://github.com/mikemimik/website.git"
     },
-    "bugs": "https://github.com/TryGhost/Editorial/issues",
+    "bugs": "https://github.com/mikemimik/website/issues",
     "contributors": [
         {
             "name": "ajlkn",
             "email": "aj@lkn.io",
             "url": "https://twitter.com/ajlkn"
+        },
+        {
+            "name": "Michael Perrotte",
+            "email": "mike@mikecorp.ca",
+            "url": "https://mikecorp.ca"
         }
     ],
     "devDependencies": {
+        "@mikemimik/ghost-admin-api": "^1.1.0",
         "beeper": "2.0.0",
-        "gscan": "3.1.1",
+        "dotenv": "^8.2.0",
+        "form-data": "^3.0.0",
+        "gscan": "^3.1.1",
         "gulp": "4.0.2",
         "gulp-livereload": "4.0.2",
         "gulp-sass": "^4.0.2",
         "gulp-sourcemaps": "^2.6.4",
-        "gulp-watch": "5.0.1",
+        "gulp-watch": "^5.0.1",
         "gulp-zip": "5.0.1",
+        "node-fetch": "^2.6.0",
         "node-sass": "4.13.0"
     },
     "config": {
