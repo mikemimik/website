@@ -13,7 +13,6 @@ results
 
 npm-debug.log
 node_modules
-package-lock.json
 
 .idea/*
 *.iml
@@ -21,5 +20,6 @@ package-lock.json
 projectFilesBackup
 
 .DS_Store
+.env
 
 dist/
