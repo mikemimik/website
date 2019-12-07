@@ -1,16 +1,19 @@
 name: Test
 on:
   pull_request:
+    branches:
+      - "master"
   push:
     branches:
-      - master
+      - "**"
+      - "!master"
 
 jobs:
   build:
     runs-on: ubuntu-18.04
     strategy:
       matrix:
-        node: [ '10' ]
+        node: ["10"]
     name: Node ${{ matrix.node }}
     steps:
       - uses: actions/checkout@v1
