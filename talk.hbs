@@ -1,0 +1,27 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+{{!-- Talks --}}
+<section>
+    <header class="major">
+        <h1>Talks</h1>
+    </header>
+
+    <section class="talks">
+        {{#get "posts" filter="primary_tag:talk" as |talk|}}
+            {{#foreach talk}}
+                <article id="banner">
+                    <div class="content">
+                        <header>
+                            <h1><a href="{{url}}">{{title}}</a></h1>
+                            {{#if custom_excerpt}}
+                                <p>{{custom_excerpt}}</p>
+                            {{/if}}
+                        </header>
+                    </div>
+                </article>
+            {{/foreach}}
+        {{/get}}
+    </section>
+</section>
