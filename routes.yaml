@@ -6,7 +6,7 @@ collections:
     template: index
   /talks/:
     permalink: /talks/{slug}/
-    template: index
+    template: talk
     filter: primary_tag:talk
 
 taxonomies:
