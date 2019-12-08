@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-18.04
     strategy:
       matrix:
-        node: [ '10' ]
+        node: ["10"]
     name: Node ${{ matrix.node }}
     steps:
       - uses: actions/checkout@v1.1.0
@@ -31,3 +31,6 @@ jobs:
       - run: yarn test:ci
       - run: yarn zip
       - run: yarn deploy
+        env:
+          SITE_URL: ${{ secrets.SITE_URL }}
+          SITE_API_KEY: ${{ secrets.SITE_API_KEY }}
