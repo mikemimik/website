@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{@site.lang}}">
+
 <head>
 
     {{!-- Document Settings --}}
@@ -18,6 +19,7 @@
     {{ghost_head}}
 
 </head>
+
 <body class="is-preload {{body_class}}">
 
     <div id="wrapper">
@@ -27,18 +29,43 @@
                 {{!-- Header --}}
                 <header id="header">
                     {{#if @site.logo}}
-                        <a href="{{@site.url}}" class="logo image"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
+                        <a href="{{@site.url}}" class="logo image">
+                            <img src="{{@site.logo}}" alt="{{@site.title}}" />
+                        </a>
                     {{else}}
                         <a href="{{@site.url}}" class="logo">{{@site.title}}</a>
                     {{/if}}
                     <ul class="icons">
+                        <li>
+                            <a href="https://github.com/mikemimik" class="icon fa-github" title="GitHub">
+                                <span class="label">GitHub</span>
+                            </a>
+                        </li>
                         {{#if @site.twitter}}
-                            <li><a href="{{twitter_url @site.twitter}}" class="icon fa-twitter" title="Twitter"><span class="label">Twitter</span></a></li>
+                            <li>
+                                <a href="{{twitter_url @site.twitter}}" class="icon fa-twitter" title="Twitter">
+                                    <span class="label">Twitter</span>
+                                </a>
+                            </li>
                         {{/if}}
                         {{#if @site.facebook}}
-                            <li><a href="{{facebook_url @site.facebook}}" class="icon fa-facebook" title="Facebook"><span class="label">Facebook</span></a></li>
+                            <li>
+                                <a href="{{facebook_url @site.facebook}}" class="icon fa-facebook" title="Facebook">
+                                    <span class="label">Facebook</span>
+                                </a>
+                            </li>
                         {{/if}}
-                        <li><a href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" class="icon fa-rss" target="_blank" rel="noopener"><span class="label" title="RSS">RSS</span></a></li>
+                        <li>
+                            <a href="https://linkedin.com/in/mperrotte/" class="icon fa-linkedin" title="LinkedIn">
+                                <span class="label">LinkedIn</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" class="icon fa-rss"
+                                target="_blank" rel="noopener">
+                                <span class="label" title="RSS">RSS</span>
+                            </a>
+                        </li>
                     </ul>
                 </header>
 
@@ -65,4 +92,5 @@
     {{ghost_foot}}
 
 </body>
+
 </html>
