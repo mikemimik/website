@@ -15,7 +15,14 @@ into the {body} of the default.hbs template --}}
                             <p>{{custom_excerpt}}</p>
                         {{/if}}
                     </header>
-                    {{content words="49"}}
+                    {{!--
+                        NOTE: Content Length
+                        Depending on how much content there is when updating
+                        current employment, or notable points in the featured
+                        and pinned post; the value below will need to be
+                        adjusted.
+                    --}}
+                    {{content words="47"}}
                     <ul class="actions">
                         <li><a href="{{url}}" class="button big">Learn More</a></li>
                     </ul>
