@@ -156,18 +156,33 @@
 	}
 
 	.feature-snippet-employment {
+		overflow: hidden;
+		margin-bottom: 10px;
+
 		img {
 			height: 80px;
 			width: 80px;
-			float: right;
+			float: left;
+			margin-right: 10px;
 		}
 	}
 
 	.feature-snippet-notable {
+		overflow: hidden;
+
 		img {
 			height: 50px;
 			width: 50px;
 			float: left;
 			margin-right: 10px;
 		}
+
+		.notable-point {
+			float: left;
+		}
+	}
+
+
+	.rounded {
+		border-radius: 10%;
 	}
