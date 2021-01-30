@@ -11,17 +11,18 @@
         "desktop": "assets/screenshot-desktop.jpg"
     },
     "scripts": {
+        "build": "gulp build",
+        "clean": "rm -rf dist/",
+        "deploy": "node scripts/deploy-theme.js",
         "dev": "gulp",
-        "zip": "gulp zip",
-        "pretest": "gulp build",
+        "dev:deploy": "yarn run clean && yarn run zip && yarn run deploy",
+        "preship": "yarn test",
+        "pretest": "yarn build",
         "test": "gscan .",
         "test:ci": "gscan --fatal --verbose .",
-        "preship": "yarn test",
-        "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; fi",
-        "clean": "rm -rf dist/",
         "token": "node scripts/api-token.js",
-        "dev:deploy": "npm run clean && npm run zip && npm run deploy",
-        "deploy": "node scripts/deploy-theme.js"
+        "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; fi",
+        "zip": "gulp zip"
     },
     "author": {
         "name": "Ghost Foundation",
@@ -59,18 +60,18 @@
     ],
     "devDependencies": {
         "@mikemimik/ghost-admin-api": "^1.1.0",
-        "beeper": "2.0.0",
+        "beeper": "^2.1.0",
         "dotenv": "^8.2.0",
         "form-data": "^3.0.0",
-        "gscan": "^3.5.4",
+        "gscan": "^3.6.1",
         "gulp": "4.0.2",
         "gulp-livereload": "4.0.2",
         "gulp-sass": "^4.1.0",
-        "gulp-sourcemaps": "^2.6.5",
+        "gulp-sourcemaps": "^3.0.0",
         "gulp-watch": "^5.0.1",
         "gulp-zip": "^5.0.2",
-        "node-fetch": "^2.6.0",
-        "node-sass": "^4.14.1"
+        "node-fetch": "^2.6.1",
+        "node-sass": "^5.0.0"
     },
     "config": {
         "posts_per_page": 6
