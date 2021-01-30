@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-18.04
     strategy:
       matrix:
-        node: ['10', '12' ]
+        node: ['12']
     name: Node ${{ matrix.node }}
     steps:
       - uses: actions/checkout@v2
