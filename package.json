@@ -18,10 +18,10 @@
         "dev:deploy": "yarn run clean && yarn run zip && yarn run deploy",
         "preship": "yarn test",
         "pretest": "yarn build",
+        "release": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version --minor && git push --tags && git push; fi",
         "test": "gscan .",
         "test:ci": "gscan --fatal --verbose .",
         "token": "node scripts/api-token.js",
-        "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; fi",
         "zip": "gulp zip"
     },
     "author": {
