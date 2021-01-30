@@ -16,9 +16,9 @@ jobs:
         node: ['10', '12', '14']
     name: Node ${{ matrix.node }}
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - name: Cache node modules
-        uses: actions/cache@v1
+        uses: actions/cache@v2
         with:
           path: node_modules
           key: ${{ runner.OS }}-build-${{ hashFiles('**/yarn.lock') }}
@@ -27,7 +27,7 @@ jobs:
             ${{ runner.OS }}-build-
             ${{ runner.OS }}-
       - name: Setup node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node }}
       - run: npm install yarn
