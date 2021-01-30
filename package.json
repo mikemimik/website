@@ -21,7 +21,7 @@
         "test": "gscan .",
         "test:ci": "gscan --fatal --verbose .",
         "token": "node scripts/api-token.js",
-        "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; fi",
+        "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version --minor && git push --tags && git push; fi",
         "zip": "gulp zip"
     },
     "author": {
