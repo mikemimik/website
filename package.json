@@ -11,17 +11,18 @@
         "desktop": "assets/screenshot-desktop.jpg"
     },
     "scripts": {
+        "build": "gulp build",
+        "clean": "rm -rf dist/",
+        "deploy": "node scripts/deploy-theme.js",
         "dev": "gulp",
-        "zip": "gulp zip",
-        "pretest": "gulp build",
+        "dev:deploy": "yarn run clean && yarn run zip && yarn run deploy",
+        "preship": "yarn test",
+        "pretest": "yarn build",
         "test": "gscan .",
         "test:ci": "gscan --fatal --verbose .",
-        "preship": "yarn test",
-        "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; fi",
-        "clean": "rm -rf dist/",
         "token": "node scripts/api-token.js",
-        "dev:deploy": "npm run clean && npm run zip && npm run deploy",
-        "deploy": "node scripts/deploy-theme.js"
+        "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; fi",
+        "zip": "gulp zip"
     },
     "author": {
         "name": "Ghost Foundation",
